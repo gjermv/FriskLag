@@ -9,13 +9,13 @@ if 'numPlayers' not in st.session_state:
     st.session_state.numPlayers = 4
 
 if 'scorer' not in st.session_state:
-    st.session_state.scorer = []
+    st.session_state.scorer = ''
 
 def teamInc():
     st.session_state.numPlayers += 1
 
 def addScorer(p):
-    st.session_state.scorer.append('Test')
+    st.session_state.scorer = 'Test\nTest'
 
 st.write('Spillere')
 
@@ -30,6 +30,6 @@ st.button('Bytt', on_click=teamInc)
 st.button('Målscorer', on_click=addScorer)
 st.write('Bytt', st.session_state.numPlayers)
 
-for s in st.session_state.scorer:
-    st.write(s)
+st.write('Målscorer')
+st.write(st.session_state.scorer)
     
