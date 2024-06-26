@@ -4,7 +4,7 @@ import random as rd
 
 
 players = ['Player 1','Player 2','Player 3','Player 4','Player 5','Player 6']
-onField = ['test','test']
+
 
 if 'numPlayers' not in st.session_state:
     st.session_state.numPlayers = 4
@@ -16,7 +16,7 @@ def teamInc():
     st.session_state.numPlayers += 1
 
 def addScorer():
-    pass
+    st.session_state.scorer = ['test','Not test']
 
 st.write('Spillere')
 
@@ -29,7 +29,7 @@ for p in players[st.session_state.numPlayers:]:
 
 st.button('Bytt', on_click=teamInc)
 
-st.write('Bytt', st.session_state.numPlayers)
+
 
 st.write('Målscorer')
 for item in st.session_state.scorer:
