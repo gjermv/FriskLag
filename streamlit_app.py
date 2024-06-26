@@ -16,19 +16,19 @@ def teamInc():
     st.session_state.numPlayers += 1
 
 def addScorer():
-    st.session_state.scorer = 'Test'
+    st.write('Test')
 
 st.write('Spillere')
 
 for p in players[:st.session_state.numPlayers]:
-    onField.append(st.checkbox(p))
+    st.checkbox(p, on_change=addScorer )
 
 st.write('Reserver')
 for p in players[st.session_state.numPlayers:]:
     st.checkbox(p)
 
 st.button('Bytt', on_click=teamInc)
-st.button('Målscorer', on_click=addScorer)
+
 st.write('Bytt', st.session_state.numPlayers)
 
 st.write('Målscorer')
