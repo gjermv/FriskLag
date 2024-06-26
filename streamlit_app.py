@@ -9,13 +9,13 @@ if 'numPlayers' not in st.session_state:
     st.session_state.numPlayers = 4
 
 if 'scorer' not in st.session_state:
-    st.session_state.scorer = ''
+    st.session_state.scorer = []
 
 def teamInc():
     st.session_state.numPlayers += 1
 
-def addScorer(p):
-    st.session_state.scorer = 'Test'
+def addScorer():
+    st.session_state.scorer.append('Test')
 
 st.write('Spillere')
 
