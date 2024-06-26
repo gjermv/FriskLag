@@ -33,5 +33,5 @@ st.write('Bytt', st.session_state.numPlayers)
 
 st.write('Målscorer')
 for item in st.session_state.scorer:
-    print(item)
+    st.write(item)
     
