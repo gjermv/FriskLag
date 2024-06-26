@@ -18,3 +18,4 @@ for p in players[st.session_state.numPlayers:]:
     st.checkbox(p)
 
 st.button('Bytt', on_click=teamInc)
+st.write('Bytt', st.session_state.numPlayers)
