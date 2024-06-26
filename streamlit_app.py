@@ -30,6 +30,6 @@ st.button('Bytt', on_click=teamInc)
 st.button('Målscorer', on_click=addScorer)
 st.write('Bytt', st.session_state.numPlayers)
 
-for s in st.session_state.score:
+for s in st.session_state.scorer:
     st.write(s)
     
