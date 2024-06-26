@@ -1,9 +1,9 @@
 import streamlit as st 
 import pandas as pd
 
-st.button("Reset", type="primary")
-if st.button("Say hello"):
-    st.write("Why hello there")
-else:
-    st.write("Goodbye")
+players = ['Player 1','Player 2','Player 3','Player 4','Player 5','Player 6']
+
+
+for p in players:
+    st.button(p)
 
