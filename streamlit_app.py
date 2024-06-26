@@ -16,7 +16,8 @@ def teamInc():
     st.session_state.numPlayers += 1
 
 def addScorer():
-    st.write('Test')
+    for item in onField:
+        st.write(item)
 
 st.write('Spillere')
 
