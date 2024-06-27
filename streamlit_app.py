@@ -5,6 +5,10 @@ import random as rd
 if 'team' not in st.session_state:
     st.session_state.team = ['Player 1','Player 2','Player 3','Player 4','Player 5','Player 6']
 
+for p in st.session_state.team: 
+    if p not in st.session_state:
+        st.session_state[p] = ''
+
 if 'numPlayers' not in st.session_state:
     st.session_state.numPlayers = 4
 
@@ -30,7 +34,7 @@ st.write('Utespillere:')
 
 for p in st.session_state.team[:st.session_state.numPlayers]:
     myP= {'player':p}
-    st.checkbox(p, on_change=addScorer, kwargs=myP)
+    st.session_state[p] = st.checkbox(p, on_change=addScorer, kwargs=myP)
    
 
 st.write('Innbyttere')
