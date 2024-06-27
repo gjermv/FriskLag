@@ -21,7 +21,8 @@ def addScorer(player):
 st.write('Spillere')
 
 for p in players[:st.session_state.numPlayers]:
-    myP['player'] = p
+    
+    myP= {'player':p}
     st.checkbox(p, on_change=addScorer,kwargs=myP)
 
 st.write('Reserver')
