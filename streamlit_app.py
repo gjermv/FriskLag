@@ -25,10 +25,12 @@ def addScorer(player):
     st.session_state.scorer.append(player)
 
 def swapPlayer(p1, p2):
-    st.session_state.team.remove(p1)
-    st.session_state.team.append(p1)
+    for px in st.session_state.team:
+        if st.session_state[item]:
+            st.session_state.team.remove(px)
+            st.session_state.team.append(px)
+            break
 
-st.write(st.session_state['Player 2'])
 
 st.write('Utespillere:')
 
@@ -51,7 +53,5 @@ st.button('Spiller Minus', on_click=teamDec)
 st.divider()
 
 st.write('Målscorer')
-for item in st.session_state.team:
-    if st.session_state[item]:
-        st.write(item)
+
     
