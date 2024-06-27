@@ -10,18 +10,18 @@ if 'numPlayers' not in st.session_state:
     st.session_state.numPlayers = 4
 
 if 'scorer' not in st.session_state:
-    st.session_state.scorer = ['test','test']
+    st.session_state.scorer = ['Spiller']
 
 def teamInc():
     st.session_state.numPlayers += 1
 
-def addScorer():
-    st.session_state.scorer.append('Test')
+def addScorer(player):
+    st.session_state.scorer.append(player)
 
 st.write('Spillere')
 
 for p in players[:st.session_state.numPlayers]:
-    st.checkbox(p, on_change=addScorer )
+    st.checkbox(p, on_change=addScorer, args=p)
 
 st.write('Reserver')
 for p in players[st.session_state.numPlayers:]:
@@ -29,7 +29,7 @@ for p in players[st.session_state.numPlayers:]:
 
 st.button('Bytt', on_click=teamInc)
 
-
+st.divider()
 
 st.write('Målscorer')
 for item in st.session_state.scorer:
