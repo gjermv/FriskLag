@@ -53,5 +53,5 @@ st.divider()
 st.write('Målscorer')
 for item in st.session_state.team:
     if st.session_state[item]:
-        print(item)
+        st.write(item)
     
