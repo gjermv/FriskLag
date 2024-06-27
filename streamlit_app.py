@@ -26,7 +26,7 @@ def addScorer(player):
 
 def swapPlayer(p1, p2):
     for px in st.session_state.team:
-        if st.session_state[item]:
+        if st.session_state[px]:
             st.session_state.team.remove(px)
             st.session_state.team.append(px)
             break
