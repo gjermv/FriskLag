@@ -23,6 +23,7 @@ def addScorer(player):
 
 def swapPlayer(p1, p2):
     st.session_state.team[1] = 'test'
+    st.write(p1,p2)
     
 
 st.write('Spillere')
