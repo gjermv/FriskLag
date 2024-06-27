@@ -26,16 +26,14 @@ def swapPlayer(p1, p2):
 
 
 
-st.write('Spillere')
+st.write('Utespillere:')
 
-c = 0
 for p in st.session_state.team[:st.session_state.numPlayers]:
     myP= {'player':p}
-    st.checkbox(p, key='aa', on_change=addScorer, kwargs=myP)
-    c += 1
+    st.checkbox(p, on_change=addScorer, kwargs=myP)
+   
 
-print(st.session_state.aa, st.session_state.aa)
-st.write('Reserver')
+st.write('Innbyttere')
 
 for p in st.session_state.team[st.session_state.numPlayers:]:
     st.checkbox(p)
