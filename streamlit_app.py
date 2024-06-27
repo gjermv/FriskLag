@@ -24,7 +24,7 @@ def swapPlayer(p1, p2):
     st.session_state.team.remove(p1)
     st.session_state.team.append(p1)
 
-
+st.write(st.session_state['Player 2'])
 
 st.write('Utespillere:')
 
