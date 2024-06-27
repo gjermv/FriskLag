@@ -37,7 +37,7 @@ for p in st.session_state.team[st.session_state.numPlayers:]:
     st.checkbox(p)
 
 swap = {'p1': 'Player 4', 'p2': 'Player 2'}
-st.button('Bytt', on_click=swapPlayer,kwarg=swap)
+st.button('Bytt', on_click=swapPlayer,kwargs=swap)
 
 st.button('Spiller Pluss', on_click=teamInc)
 st.button('Spiller Minus', on_click=teamDec)
