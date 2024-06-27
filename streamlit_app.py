@@ -31,10 +31,10 @@ st.write('Spillere')
 c = 0
 for p in st.session_state.team[:st.session_state.numPlayers]:
     myP= {'player':p}
-    st.checkbox(p, key=p+str(c), on_change=addScorer, kwargs=myP)
+    st.checkbox(p, key='aa', on_change=addScorer, kwargs=myP)
     c += 1
 
-print(st.session_state.p1, st.session_state.p2)
+print(st.session_state.aa, st.session_state.aa)
 st.write('Reserver')
 
 for p in st.session_state.team[st.session_state.numPlayers:]:
