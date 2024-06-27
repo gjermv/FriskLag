@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import random as rd
 
-
-players = ['Player 1','Player 2','Player 3','Player 4','Player 5','Player 6']
+if 'team' not in st.session_state:
+    st.session_state.team = ['Player 1','Player 2','Player 3','Player 4','Player 5','Player 6']
 
 
 if 'numPlayers' not in st.session_state:
@@ -15,22 +15,25 @@ if 'scorer' not in st.session_state:
 def teamInc():
     st.session_state.numPlayers += 1
 
+def teamDec():
+    st.session_state.numPlayers -= 1
+
 def addScorer(player):
     st.session_state.scorer.append(player)
 
 st.write('Spillere')
 
-for p in players[:st.session_state.numPlayers]:
-    
+for p in st.session_state.team[:st.session_state.numPlayers]:
     myP= {'player':p}
-    st.checkbox(p, on_change=addScorer,kwargs=myP)
+    st.checkbox(p, on_change=addScorer, kwargs=myP)
 
 st.write('Reserver')
 
-for p in players[st.session_state.numPlayers:]:
+for p in st.session_state.team[st.session_state.numPlayers:]:
     st.checkbox(p)
 
-st.button('Bytt', on_click=teamInc)
+st.button('+ Bytt', on_click=teamInc)
+st.button('- Bytt', on_click=teamDec)
 
 st.divider()
 
