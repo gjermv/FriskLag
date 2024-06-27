@@ -15,15 +15,17 @@ if 'scorer' not in st.session_state:
 def teamInc():
     st.session_state.numPlayers += 1
 
-def addScorer():
+def addScorer(player):
     st.session_state.scorer.append('test')
 
 st.write('Spillere')
 
 for p in players[:st.session_state.numPlayers]:
-    st.checkbox(p, on_change=addScorer)
+    myP['player'] = p
+    st.checkbox(p, on_change=addScorer,kwargs=myP)
 
 st.write('Reserver')
+
 for p in players[st.session_state.numPlayers:]:
     st.checkbox(p)
 
