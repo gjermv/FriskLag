@@ -36,7 +36,7 @@ st.write('Reserver')
 for p in st.session_state.team[st.session_state.numPlayers:]:
     st.checkbox(p)
 
-swap = {p1='Player 4', p2='Player 2'}
+swap = {p1:'Player 4', p2:'Player 2'}
 st.button('Bytt', on_click=swapPlayer,kwarg=swap)
 
 st.button('Spiller Pluss', on_click=teamInc)
