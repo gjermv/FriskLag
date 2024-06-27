@@ -16,7 +16,7 @@ def teamInc():
     st.session_state.numPlayers += 1
 
 def addScorer(player):
-    st.session_state.scorer.append(player)
+    st.session_state.scorer.append('test')
 
 st.write('Spillere')
 
